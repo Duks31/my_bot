@@ -6,7 +6,7 @@ from launch.actions import DeclareLaunchArgument
 from launch_ros.actions import Node
 import xacro
 
-
+    
 def generate_launch_description():
     # Check if we're told to use sim time
     use_sim_time = LaunchConfiguration("use_sim_time")
