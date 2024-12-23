@@ -1,5 +1,5 @@
-### NOTE: Start Gazebo first before running this script
-### TODO: Increase the timeout before the /spawn dies
+# NOTE: Start Gazebo first before running this script
+# TODO: Increase the timeout before the /spawn dies
 
 import os
 from ament_index_python.packages import get_package_share_directory
@@ -9,12 +9,12 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 from launch_ros.actions import Node
 
-
+    
 def generate_launch_description():
     # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
     # !!! MAKE SURE YOU SET THE PACKAGE NAME CORRECTLY !!!
 
-    package_name = "my_bot"  # <--- CHANGE ME
+    package_name = "my_bot" 
 
     rsp = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -38,7 +38,7 @@ def generate_launch_description():
                 )
             ]
         ),
-        # launch_arguments={"verbose": "true", "factory": "true"}.items(),  
+        # launch_arguments={"verbose": "true", "factory": "true"}.items(),
     )
 
     # Run the spawner node from the gazebo_ros package. The entity name doesn't really matter if you only have a single robot.
@@ -49,14 +49,25 @@ def generate_launch_description():
         output="screen",
     )
 
+    diff_cont_spawner = Node(
+        package = "controller_manger", 
+        executable = "spawner.py", 
+        arguments = ["diff_cont"], 
+    )
+
+    joint_broad_spawner = Node(
+        package = "controller_manger", 
+        executable = "spawner.py    ", 
+        arguments = ["joint_broad"], 
+    )
+
     # Launch them all!
     return LaunchDescription(
         [
             rsp,
             gazebo,
             spawn_entity,
+            diff_cont_spawner, 
+            joint_broad_spawner, 
         ]
     )
-
-
-
