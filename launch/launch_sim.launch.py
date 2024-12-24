@@ -1,6 +1,3 @@
-# NOTE: Start Gazebo first before running this script
-# TODO: Increase the timeout before the /spawn dies
-
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
@@ -9,12 +6,12 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 from launch_ros.actions import Node
 
-    
+
 def generate_launch_description():
     # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
     # !!! MAKE SURE YOU SET THE PACKAGE NAME CORRECTLY !!!
 
-    package_name = "my_bot" 
+    package_name = "my_bot"
 
     rsp = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -50,15 +47,15 @@ def generate_launch_description():
     )
 
     diff_cont_spawner = Node(
-        package = "controller_manger", 
-        executable = "spawner.py", 
-        arguments = ["diff_cont"], 
+        package="controller_manager",
+        executable="spawner",
+        arguments=["diff_cont"],
     )
 
     joint_broad_spawner = Node(
-        package = "controller_manger", 
-        executable = "spawner.py    ", 
-        arguments = ["joint_broad"], 
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_broad"],
     )
 
     # Launch them all!
@@ -67,7 +64,7 @@ def generate_launch_description():
             rsp,
             gazebo,
             spawn_entity,
-            diff_cont_spawner, 
-            joint_broad_spawner, 
+            diff_cont_spawner,
+            joint_broad_spawner,
         ]
     )
