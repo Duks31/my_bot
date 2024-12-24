@@ -93,7 +93,7 @@ my_bot
 
 ### Robot Description (URDF)
 
-![Robot Image](https://github.com/Duks31/my_bot/blob/main/assets/diff_drive%20v4.png)
+![diff_drive v4](https://github.com/user-attachments/assets/4ef3cf61-0392-4404-9eaf-3be592056547)
 
 The robot's URDF (Unified Robot Description Format) file was initially designed using **Autodesk Fusion 360**. The 3D model of the robot was created in Fusion 360, which provided an accurate representation of the robot's physical dimensions, joints, and links. 
 
