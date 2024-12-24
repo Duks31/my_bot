@@ -158,4 +158,4 @@ The robot's URDF (Unified Robot Description Format) file was initially designed 
 - **obstacles.world**: This world file is used to simulate the robot in a world with obstacles.
 
 ### Acknowledgments
-- 
+- Thanks to https://www.youtube.com/@ArticulatedRobotics
