@@ -1,6 +1,6 @@
 ## My Bot
 
-[Demo](https://github.com/Duks31/my_bot/blob/main/assets/ros_diff_drive.mp4)
+https://github.com/user-attachments/assets/5554a42e-961d-457e-9b44-4f33979c5dec
 
 Diff Drive Robot Using ROS2, Gazebo, Rviz2 and Fusion 360
 
