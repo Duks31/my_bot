@@ -8,7 +8,7 @@ Diff Drive Robot Using ROS2, Gazebo, Rviz2 and Fusion 360
 This repository contains the ROS2 implementation for a differential drive robot. The package includes nodes for controlling the robot, simulating its motion. 
 
 ### System Requirements
-- Ubuntu 20.04
+- Ubuntu 22.04
 - \>= ROS2 Humble 
 - Python 3.XX
 
